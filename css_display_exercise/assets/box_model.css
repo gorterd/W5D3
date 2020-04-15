@@ -4,6 +4,20 @@ body {
   /* If the user cannot load the Arial font, the sans-serif font is used */
   font-family: Arial, sans-serif;
   background-color: #FEFFF1;
+  width: 900px;
+  margin: 0 auto;
+}
+
+aside {
+  width: 180px;
+  display: inline-block;
+  vertical-align: top;
+  margin-right: 15px;
+}
+
+aside + section {
+  width: 700px;
+  display: inline-block;
 }
 
 h1 {
@@ -32,6 +46,12 @@ header > img {
 
   /* The list style property is shorthand for multiple list-style properties*/
   list-style: square inside;
+}
+
+.ingredients-list li {
+  margin-top: 15px;
+  margin-bottom: 15px;
+
 }
 
 ol {
@@ -72,3 +92,29 @@ h2 + .user_review {
     border-top: 1px solid black;
 }
 
+nav, nav li, nav li a {
+  display: inline-block;
+}
+
+nav li a {
+  padding: 20px;
+}
+
+#directions + ol li {
+  margin-top: 15px;
+  margin-bottom: 15px;
+} 
+
+#review-form input{
+  display: block;
+}
+
+#review-form label {
+  display: block;
+}
+
+#expertise {
+  margin-top: 30px;
+  margin-bottom: 30px;
+  width: 600px;
+}
