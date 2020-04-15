@@ -76,7 +76,9 @@ INSERT INTO
   VALUES
     ((SELECT id FROM users WHERE lname = 'Hamm'), (SELECT id FROM questions WHERE title = 'how do I puts') ),
     ((SELECT id FROM users WHERE lname = 'Zablan'), (SELECT id FROM questions WHERE title = 'what is app academy') ),
-    ((SELECT id FROM users WHERE lname = 'Blow'), (SELECT id FROM questions WHERE title = 'does indenting matter') );
+    ((SELECT id FROM users WHERE lname = 'Blow'), (SELECT id FROM questions WHERE title = 'does indenting matter') ),
+    ((SELECT id FROM users WHERE lname = 'Tong'), (SELECT id FROM questions WHERE title = 'does indenting matter') );
+
 
 INSERT INTO
   replies(reply_body, parent_reply_id, user_id, question_id)
@@ -84,9 +86,13 @@ INSERT INTO
     ('hit p', 
         NULL, 
         (SELECT id FROM users WHERE lname = 'Zablan'), 
-        (SELECT id FROM questions WHERE title = 'how do I puts') ),
+        (SELECT id FROM questions WHERE title = 'how do I puts') );
+
+INSERT INTO
+  replies(reply_body, parent_reply_id, user_id, question_id)
+  VALUES
     ('or print', 
-        (SELECT id FROM replies WHERE reply_body = 'hit p'), 
+        (SELECT id FROM replies AS parent_replies WHERE parent_replies.reply_body = 'hit p'), 
         (SELECT id FROM users WHERE lname = 'Tong'), 
         (SELECT id FROM questions WHERE title = 'how do I puts') ),
     ('or puts', 
@@ -99,5 +105,9 @@ INSERT INTO
   VALUES
     ((SELECT id FROM users WHERE lname = 'Tong'), (SELECT id FROM questions WHERE title = 'how do I puts') ),
     ((SELECT id FROM users WHERE lname = 'Owens'), (SELECT id FROM questions WHERE title = 'what is app academy') ),
+    ((SELECT id FROM users WHERE lname = 'Hamm'), (SELECT id FROM questions WHERE title = 'what is app academy') ),
+    ((SELECT id FROM users WHERE lname = 'Blow'), (SELECT id FROM questions WHERE title = 'what is app academy') ),
+    ((SELECT id FROM users WHERE lname = 'Tong'), (SELECT id FROM questions WHERE title = 'what is app academy') ),
+    ((SELECT id FROM users WHERE lname = 'Zablan'), (SELECT id FROM questions WHERE title = 'what is app academy') ),
     ((SELECT id FROM users WHERE lname = 'Zablan'), (SELECT id FROM questions WHERE title = 'does indenting matter') );
 
